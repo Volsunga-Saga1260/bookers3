@@ -1,2 +1,22 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <%= flash[:error] %>
+      <h1 class="text-center mt-3">新規投稿</h1>
+      <%= form_with model:@book, local:true do |f| %>
+        <h4 class="mt-3">二次元小説タイトル</h4>
+        <%= f.text_field :title, class:"form-control", :placeholder => "感想タイトルをご入力ください" %>
+        <h4 class="mt-3">原作タイトル</h4>
+        <%= f.text_field :original, class:"form-control", :placeholder => "原作タイトルをご入力ください" %>
+        <div class="mt-4">
+          <%= f.submit '投稿', class:"btn btn-primary btn-block" %>
+        </div>
+      <% end %>
+      <div class="text-center mt-2">
+        <%= link_to '感想投稿一覧へ', movies_path, class:"btn-warning btn-block form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
