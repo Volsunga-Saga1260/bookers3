@@ -16,10 +16,16 @@
   
   <div class="row">
     <div class="col-12">
-      <% @movies.each do |movie| %>
-        <table class="table table-bordered">
+      <table class="table">
+        <thead>
+          <td><strong>投稿日</strong></td>
+          <td><strong>感想タイトル：</strong></td>
+        </thead>
+        <% @movies.each do |movie| %>
+          <tbody>
            <tr>
-              <td class="align-middle" colspan="3"><strong>感想タイトル：</strong><%= movie.title %></td>
+              <td><%= book.created_at %></td>
+              <td class="align-middle" colspan="3"><%= movie.title %></td>
               <td class="col-sm-2 text-center">
                 <%= link_to '詳細', movie_path(movie.id), class:"btn btn-info btn-block" %>
               </td>
@@ -36,9 +42,9 @@
                 <% end %>
               </td>
             </tr>
-        </table>
-        <br>
-      <% end %>
+          </tbody>
+        <% end %>
+      </table>
     </div>
   </div>
   <div class="my-3"><%= paginate @books %></div>
