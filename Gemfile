@@ -73,3 +73,6 @@ gem 'kaminari','~> 1.2.1'
 gem "toastr-rails"
 
 gem 'activeadmin'
+
+gem 'rubocop', require:false
+gem 'rubocop-rails', require:false
